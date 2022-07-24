@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braille Translator</title>
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet"> -->
+
+    <!-- Italianno font -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+     -->
+
+    <!-- lora font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
+    
+    
+    
+    <!-- for braille translation  -->
+    <link href="//db.onlinewebfonts.com/c/b58ff6e64c0256dd7b537f3121ed571f?family=Braille" rel="stylesheet" type="text/css"/>
+    
+</head>
+
+<style>
+
+@import url(//db.onlinewebfonts.com/c/b58ff6e64c0256dd7b537f3121ed571f?family=Braille);
+
+
+    .header{
+        width: 70%;
+        /* background-color: #fbb034; */
+        /* background-image: linear-gradient(360deg, #fbb034 0%, #ffdd00 85%); */
+        /* background: linear-gradient(180deg, #13F1FC -7.67%, #04B2F4 40.97%, #0470DC 84.81%); */
+        /* background-image: linear-gradient(to right top, #07054f, #080865, #090c7c, #090f94, #0913ac, #0730c4, #0348dc, #0060f4, #0087ff, #00a5ff, #00bff7, #04d5ea);  */
+        background: linear-gradient(180deg, #939393 5.22%, #000000 91.59%);
+        color: white;
+        
+        font-family: 'Lora';
+        font-size: 3rem;
+        font-weight: bold;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom-left-radius: 50% ;
+        border-bottom-right-radius: 50% ;
+
+    }
+
+    img{
+        width: 25%;
+        margin-top: 3%;
+    }
+
+    .text {
+        /* font-family: 'Petit Formal Script', cursive; */
+        font-family: 'Italianno', cursive;
+        font-size: 2rem;
+        /* color: linear-gradient(360deg, #fbb034 0%, #ffdd00 85%); */
+        /* color: #ffdd00; */
+        color: #454545;
+        font-weight: 600;
+
+    }
+
+    .text1 {
+        font-family: 'Italianno', cursive;
+        font-size: 2rem;
+        margin-right: 30%;
+
+    }
+
+    .ip-message{
+        font-family: 'Italianno', cursive;
+        font-size: 1.5rem;
+        width: 40%;
+        height: auto;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  
+        border: none; 
+        border-radius: 5px;
+        font-weight:500;
+        text-decoration:dotted;
+
+
+    }
+
+    .op-area{
+        width: 40%;
+        /* border:1px solid black ; */
+        height: 100px;
+        border-radius: 5px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+        font-size: 2rem; 
+        text-align: left;
+        font-weight: 600;
+        /* font-family: 'Italianno', cursive;  */
+        font-family: 'Braille';
+        padding: 1rem;
+        margin: 1rem;
+
+    }
+
+    textarea{
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    button{
+        width: 15%;
+        border: none;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        font-size: 1.2rem;
+        font-family: 'Italianno', cursive;
+        /* box-shadow: rgba(246, 255, 0, 0.2) 0px 7px 29px 0px;   */
+        /* box-shadow:  #ffdd00  0px 10px 20px -5px;   */
+        /* background: linear-gradient(360deg, #fbb034 0%, #ffdd00 85%); */
+        background: linear-gradient(180deg, #939393 5.22%, #000000 91.59%);
+        box-shadow:  #3b3b3b  0px 10px 20px -5px;  
+        color: white;
+        border-radius: 2px;
+
+    }
+
+    .footer{
+        width: inherit;
+        /* background: linear-gradient(360deg, #fbb034 0%, #ffdd00 85%); */
+        background: linear-gradient(180deg, #939393 5.22%, #000000 91.59%);
+        color: white;
+        padding: 2rem;
+        font-family: 'Italianno', cursive;
+        border-top-left-radius: 50% ;
+        border-top-right-radius: 50% ;
+    }
+
+    @media (max-width = 400px){
+
+        .header{
+            width: 10%;
+            font-size : 1rem;
+        }
+        img{
+            width:200%;
+        }
+
+        button{
+            width:50%;
+            font-size: 2rem;
+        }
+
+    }
+
+</style>
+
+
+
+<body>
+
+    <center>
+
+        <div class="header">
+            Braille Translator
+        </div>
+
+        <div class="img"><img src="./blur_edges.jpg" alt="wrerw"></div>
+        <br>
+        <div class="text">Braille Translator</div>
+        
+        <textarea name="textarea" class="ip-message"  placeholder="Enter your sentense in English here "></textarea>
+        <br>
+        <br>
+        <button class="btn-translate">Translate to Braille</button>
+        <br>
+        <br>
+        <div class="text1">Output ↓</div>
+        <div class="op-area"></div>
+        <pre> </pre>
+        <div class="footer">
+            <span style="font-size: 2rem;">about Braille</span> <br>
+            <span style="font-size: 1rem;">Braille provides the vital access to the written word that sighted or blind people have.</span>
+
+        </div>
+
+
+    </center>
+
+
+
+<script>
+
+    const input = document.querySelector(".ip-message");
+    const output = document.querySelector(".op-area");
+    const button = document.querySelector(".btn-translate");
+
+    var serverURL = "https://api.funtranslations.com/translate/braille.json";
+    // var serverURL = "https://api.funtranslations.com/translate/minion.json";
+    // var serverURL = "https://api.funtranslations.com/translate/ferb-latin.json";
+
+    function getTranslationURL(text)
+    {
+        return serverURL + "?" + "text=" + text
+    }
+
+    function errorHandler(error)
+    {
+        console.log("error occured", error);
+        alert("something wrong with server! try again after some time ")
+    }
+
+
+    function clickHandler()
+    {
+        var inputText = input.value;
+
+        fetch(getTranslationURL(inputText))
+            .then(response =>response.json())
+            .then(json => {
+                var translatedText = json.contents.translated;
+                output.innerHTML = translatedText;
+            })
+            .catch(errorHandler)
+        
+        
+        
+        // console.log("click")
+        // console.log(input.value)
+        // output.innerHTML=input.value;
+        
+    };
+
+    button.addEventListener("click", clickHandler);
+
+</script>    
+
+</body>
+</html>
